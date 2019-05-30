@@ -4,6 +4,7 @@ add_executable(line_collision_detector
                src/line_collision_detector)
 
 target_include_directories(line_collision_detector
-                           include/)
+                           PRIVATE include/)
 
 add_subdirectory(test)
+add_subdirectory(googletest-release-1.8.1)
