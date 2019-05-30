@@ -1,4 +1,6 @@
 #pragma once
+#include <pivot_points.h>
+#include <closed_flat_path.h>
 
 class LineCollisionDetector
 {
