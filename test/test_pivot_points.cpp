@@ -1,12 +1,7 @@
 #include <gtest/gtest.h>
-#include <xyz.h>
+#include <pivot_points.h>
 
-TEST(XyzTest, ConstuctorAndAccessorsWork) {
-  Xyz xyz{1.0, 2.0, 3.0};
-  EXPECT_EQ(xyz.x(), 1.0);
-  EXPECT_EQ(xyz.y(), 2.0);
-  EXPECT_EQ(xyz.z(), 3.0);
-}
+TEST(PivotPointsTest, name) { EXPECT_EQ(1, 1); }
 
 int main(int argc, char **argv) {
   ::testing::InitGoogleTest(&argc, argv);
