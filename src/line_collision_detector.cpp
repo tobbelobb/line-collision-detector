@@ -5,4 +5,3 @@ bool LineCollisionDetector::isCollision(PivotPoints const& pivotPoints, ClosedFl
     return true;
 }
 
-int main(){}
