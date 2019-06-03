@@ -1,13 +1,11 @@
-#include <xyz.h>
 #include <gtest/gtest.h>
+#include <xyz.h>
 
-
-TEST(XyzTest, ConstuctorAndAccessorsWork)
-{
-    Xyz xyz{1.0, 2.0, 3.0};
-    EXPECT_EQ(xyz.x(), 1.0);
-    EXPECT_EQ(xyz.y(), 2.0);
-    EXPECT_EQ(xyz.z(), 3.0);
+TEST(XyzTest, ConstuctorAndAccessorsWork) {
+  Xyz xyz{1.0, 2.0, 3.0};
+  EXPECT_EQ(xyz.x(), 1.0);
+  EXPECT_EQ(xyz.y(), 2.0);
+  EXPECT_EQ(xyz.z(), 3.0);
 }
 
 int main(int argc, char **argv) {
