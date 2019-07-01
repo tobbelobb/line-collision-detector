@@ -1,0 +1,4 @@
+libs =
+#import libs += libhello%lib{hello}
+
+exe{line-collision-detector}: {hxx ixx txx cxx}{**} $libs testscript
