@@ -1,0 +1,3 @@
+cxx.std = latest
+
+using cxx
