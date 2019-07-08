@@ -1,8 +1,7 @@
 #!/usr/bin/env bash
 
+# This script is executable from within the docker image
+
 find . -regex ".*\.\(hxx\|cxx\)" -not -path "./build/*" -not -path "./extern/*" -not -path "./bdep-configs/*" -exec clang-format -i {} +
 
-# Requires shfmt
-# Install with:
-#   sudo snap install shfmt
 shfmt -w ./*.sh
