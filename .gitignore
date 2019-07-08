@@ -1,2 +1,6 @@
-bdep-configs/
 line-collision-detector/.bdep/bdep.sqlite3
+.bdep/bdep.sqlite3
+build/
+*.o.d
+*.o
+*.d

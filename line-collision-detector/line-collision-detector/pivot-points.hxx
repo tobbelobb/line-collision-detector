@@ -1,7 +1,7 @@
 #pragma once
 
-#include <vector>
 #include <line-collision-detector/xyz.hxx>
+#include <vector>
 
 class PivotPoints {
 private:

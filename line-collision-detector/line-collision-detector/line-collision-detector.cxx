@@ -1,4 +1,4 @@
-#include <line_collision_detector/line_collision_detector.hxx>
+#include <line-collision-detector/line-collision-detector.hxx>
 
 bool LineCollisionDetector::isCollision(PivotPoints const &pivotPoints,
                                         ClosedFlatPath const &path) {

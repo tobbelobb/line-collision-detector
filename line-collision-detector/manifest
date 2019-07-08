@@ -7,4 +7,3 @@ description-file: README.md
 url: https://gitlab.com/hangprinter/line-collision-detector
 email: tobben@hangprinter.org
 depends: * build2 >= 0.10.0
-#depends: libhello ^1.0.0

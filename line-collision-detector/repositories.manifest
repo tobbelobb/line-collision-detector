@@ -1,3 +1,2 @@
 : 1
-role: prerequisite
-location: https://git.build2.org/hello/libhello.git
+summary: line-collision-detector project repository
