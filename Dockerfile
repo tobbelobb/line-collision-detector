@@ -42,9 +42,11 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 # Copy the needed stuff
 FROM tools AS compile
 
-COPY .gitconfig /root/.gitconfig
-COPY .vimrc /root/.vimrc
-COPY .bashrc /root/.bashrc
+RUN useradd -ms /bin/bash user
+
+COPY .gitconfig /home/user/.gitconfig
+COPY .vimrc /home/user/.vimrc
+COPY .bashrc /home/user/.bashrc
 COPY --from=shfmt-builder /go/bin/shfmt /bin/shfmt
 
 WORKDIR /
