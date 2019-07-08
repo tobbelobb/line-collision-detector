@@ -1,5 +1,3 @@
-line-collision-detector/.bdep/bdep.sqlite3
-.bdep/bdep.sqlite3
 *.o.d
 *.o
 *.d
