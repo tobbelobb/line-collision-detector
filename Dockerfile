@@ -10,12 +10,15 @@ FROM base AS tools
 
 WORKDIR /root/
 RUN apt-get update && apt-get install -y --no-install-recommends \
-  vim && \
+  vim \
+  xsel && \
   apt-get autoremove -y && \
   apt-get clean
 
 FROM tools AS compile
 
 COPY .gitconfig /root/.gitconfig
+COPY .vimrc /root/.vimrc
+COPY .bashrc /root/.bashrc
 
 WORKDIR /
