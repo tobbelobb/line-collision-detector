@@ -11,10 +11,11 @@ FROM base AS tools
 WORKDIR /root/
 RUN apt-get update && apt-get install -y --no-install-recommends \
   vim && \
-  man && \
   apt-get autoremove -y && \
   apt-get clean
 
 FROM tools AS compile
+
+COPY .gitconfig /root/.gitconfig
 
 WORKDIR /
