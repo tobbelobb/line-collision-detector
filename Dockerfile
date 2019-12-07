@@ -3,8 +3,8 @@ FROM gcc:latest AS base
 MAINTAINER Torbjørn Ludvigsen (tobben@hangprinter.org)
 
 WORKDIR /root/
-RUN curl -sSfO https://download.build2.org/0.10.0/build2-install-0.10.0.sh && \
-  sh build2-install-0.10.0.sh --yes --trust yes
+RUN curl -sSfO https://download.build2.org/0.12.0/build2-install-0.12.0.sh && \
+  sh build2-install-0.12.0.sh --yes --trust yes
 
 
 # Build shfmt
