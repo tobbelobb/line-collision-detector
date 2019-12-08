@@ -36,10 +36,24 @@ $ ./docker-shell.sh
 ... and from there on you have access to one bash shell within the compile-container.
 This is the suggested way to compile in that terminal
 ```
-# cd line-collision-detector
+# cd /line-collision-detector/line-collision-detector
 # b
 ```
 Execute with:
 ```
-# ./line-collision-detector/line-collision-detector/line-collision-detector
+# /line-collision-detector/line-collision-detector/line-collision-detector/line-collision-detector
+```
+
+Yes, that is three layers of directories with the same name, containing an executable with that same name.
+The scheme goes like:
+```
+<repo>/<build2-project>/<source>/<binary>
+```
+
+## Compilation database
+If you need the compilation database (`compile_commands.json`), this can
+be generated within the Docker container with the following commands:
+```
+# cd /line-collision-detector/line-collision-detector
+# ./make_compilation_database.sh
 ```

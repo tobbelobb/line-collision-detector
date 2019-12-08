@@ -2,7 +2,7 @@
 
 bool LineCollisionDetector::isCollision(PivotPoints const &pivotPoints,
                                         ClosedFlatPath const &path) {
-    (void)pivotPoints;
-    (void)path;
-    return true;
+  (void)pivotPoints;
+  (void)path;
+  return true;
 }
