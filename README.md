@@ -25,7 +25,7 @@ Yet another level deeper, inside `./line-collision-detector/line-collision-detec
 ## Compiling
 Starting from a Debian/Ubuntu OS:
 ```
-$ sudo apt intall docker docker.io
+$ sudo apt install docker docker.io
 $ sudo usermod -a -G docker $USER
 $ sudo reboot
 ...
