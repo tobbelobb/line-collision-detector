@@ -51,6 +51,9 @@ RUN sudo apt-get update && sudo apt-get install -y --no-install-recommends \
     sudo apt-get autoremove -y && \
     sudo apt-get clean
 
+# Create a symlink so it becomes easier to run the binary...
+RUN sudo ln -s /line-collision-detector/line-collision-detector/line-collision-detector/line-collision-detector /usr/bin/run
+
 COPY .gitconfig /home/user/.gitconfig
 COPY .vimrc /home/user/.vimrc
 COPY .bashrc /home/user/.bashrc
