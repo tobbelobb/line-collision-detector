@@ -1,0 +1,79 @@
+# This file contains the parameters that describes the machine for line-collision-detector
+
+# The effector-pivot-points describe the positions of the effector pivot
+# points relative to the tip of the nozzle.
+
+effector-pivot-A1: ( 220.0, -140.0, 130.0)
+effector-pivot-A2: (-220.0, -140.0, 130.0)
+effector-pivot-B1: ( 230.0, -130.0, 130.0)
+effector-pivot-B2: (   5.0,  270.0, 130.0)
+effector-pivot-C1: (-230.0, -130.0, 130.0)
+effector-pivot-C2: (  -5.0,  270.0, 130.0)
+
+# The anchor-pivot-points describe the positions of the anchor pivot
+# points relative to the origin.
+
+anchor-pivot-A1: (  220.0, -1744.54,  15.92)
+anchor-pivot-A2: ( -220.0, -1744.54,  15.92)
+anchor-pivot-B1: (1542.51,  1140.88, -32.19)
+anchor-pivot-B2: (1317.51,  1540.88, -32.19)
+anchor-pivot-C1: (1542.51,  1140.88, -32.19)
+anchor-pivot-C2: (1317.51,  1540.88, -32.19)
+
+# Explanation:
+# We use the term "pivot point" when we mean "the point where
+# a line enters or exits something, like an effector,
+# or a lineroller on an anchor".
+# In the A-direction, there are two effector-pivot points, one in each of the
+# two corners that are closest to the A-anchor.
+# If your HP has mechanical advantage, and therefore multiple enter/exit points
+# for each line in each corner, use the enter/exit position of the lowest line
+# as the effector-pivot point.
+
+# Example:
+# To get to the first effector-A-pivot point from the tip of the nozzle, one has to travel
+# 220.0 mm in the x-direction, -140.0 mm in the y-direction, and 130.0 mm in the
+# z-direction. Hence:
+# effector-pivot-A1: ( 220.0, -140.0, 130.0)
+
+# The positions of effector-D-pivot points need not be specified, since D-lines can never
+# touch a print during normal printing anyways.
+
+# The following config line is copy/pasted from the Hangprinter in question's RepRapFirmware config.g
+# The numbers describe the position of the anchor-pivot point relative to the effector-pivot,
+# taken along one line in each direction
+
+# M669 A0.0:-1604.54:-114.08 B1312.51:1270.88:-162.19 C-1440.27:741.63:-161.23 D2345.00
+
+# The M669 values are relative to the effector-pivot points, measured at a time when the
+# tip of the nozzle was at the origin.
+# To get the positions of the anchor points relative to the origin, we need
+# to add positions of pivot points to M669-values.
+
+# Example:
+# Calculating the first anchor-A-pivot point relative to the origin
+# 220.0 + 0.0 = 220.0
+# -140.0 - 1604.54 = -1744.54
+# 130.0 - 114.08 = 15.92
+# Calculating the second anchor-A-pivot point
+# -220.0 + 0.0 = -220.0
+# -140.0 - 1604.56 = -1744.54
+# 130.0 - 114.08 = 15.92
+# These values should be relatively simple to verify by measuring
+# on your pysical machine.
+
+# Calculating anchor-B-pivots
+# 230.0 + 1312.51 = 1542.51
+# -130.0 + 1270.88 = 1140.88
+# 130.0 - 162.19 = -32.19
+# 5.0 + 1312.51 = 1317.51
+# 270.0 + 1270.88 = 1540.88
+# 130.0 - 162.19 = -32.19
+
+# Calculating anchor-C-pivots
+# 230.0 + 1312.51 = 1542.51
+# -130.0 + 1270.88 = 1140.88
+# 130.0 - 162.19 = -32.19
+# 5.0 + 1312.51 = 1317.51
+# 270.0 + 1270.88 = 1540.88
+# 130.0 - 162.19 = -32.19
