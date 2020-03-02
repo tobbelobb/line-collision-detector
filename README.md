@@ -15,12 +15,12 @@ This means you can edit the source files from your own OS, using any IDE or text
 Generally, everything one might need from the OS in order to compile and work on this project
 should be available in this directory.
 
-One level deeper, that is inside `./line-collision-detector`, we have a build2 project defined.
+One level deeper, that is inside `./linc`, we have a build2 project defined.
 The build2 build tool, and its norms, dictates the structure and contents of that folder.
 See [Canonical Project Structure](https://build2.org/build2-toolchain/doc/build2-toolchain-intro.xhtml#structure-canonical)
 in the build2 introduction.
 
-Yet another level deeper, inside `./line-collision-detector/line-collision-detector`, is the actual source.
+Yet another level deeper, inside `./linc/linc`, is the actual source.
 
 ## Compiling
 Starting from a Debian/Ubuntu OS:
@@ -36,15 +36,19 @@ $ ./docker-shell.sh
 ... and from there on you have access to one bash shell within the compile-container.
 This is the suggested way to compile in that terminal
 ```
-# cd /line-collision-detector/line-collision-detector
+# cd /line-collision-detector/linc
 # b
 ```
 Execute with:
 ```
-# /line-collision-detector/line-collision-detector/line-collision-detector/line-collision-detector
+# /line-collision-detector/linc/linc/linc
+```
+Or simply
+```
+# run
 ```
 
-Yes, that is three layers of directories with the same name, containing an executable with that same name.
+Yes, that is two layers of directories with the same name, containing an executable with that same name.
 The scheme goes like:
 ```
 <repo>/<build2-project>/<source>/<binary>
@@ -54,6 +58,6 @@ The scheme goes like:
 If you need the compilation database (`compile_commands.json`), this can
 be generated within the Docker container with the following commands:
 ```
-# cd /line-collision-detector/line-collision-detector
+# cd /line-collision-detector/linc
 # ./make_compilation_database.sh
 ```

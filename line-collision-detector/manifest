@@ -1,9 +1,0 @@
-: 1
-name: line-collision-detector
-version: 0.1.0-a.0.z
-summary: line-collision-detector C++ executable
-license: GPLv3
-description-file: README.md
-url: https://gitlab.com/hangprinter/line-collision-detector
-email: tobben@hangprinter.org
-depends: * build2 >= 0.10.0

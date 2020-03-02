@@ -1,0 +1,4 @@
+
+exe{linc}: {hxx ixx txx cxx}{**}
+
+cxx.poptions =+ "-I$out_root" "-I$src_root"

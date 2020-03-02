@@ -1,3 +1,3 @@
 #!/usr/bin/env bash
 
-docker build -t myimage:latest .
+docker build -t lincdev:latest .

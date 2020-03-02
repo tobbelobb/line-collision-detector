@@ -1,1 +1,1 @@
-dir{.}: dir{line-collision-detector/} doc{README.md}
+dir{.}: dir{linc/} doc{README.md}
