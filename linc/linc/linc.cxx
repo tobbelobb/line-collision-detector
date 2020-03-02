@@ -1,7 +1,7 @@
 #include <linc/linc.hxx>
 
-bool isCollision(PivotPoints const &pivotPoints, ClosedFlatPath const &path) {
+bool isCollision(PivotPoints const &pivotPoints, TriangleMesh const &mesh) {
   (void)pivotPoints;
-  (void)path;
+  (void)mesh;
   return true;
 }

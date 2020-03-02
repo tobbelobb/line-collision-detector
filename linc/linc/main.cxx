@@ -2,10 +2,15 @@
 #include <linc/linc.hxx>
 #include <linc/triangle-mesh.hxx>
 
-int main() {
+int main(int argc, char *argv[]) {
+
+  if (argc < 2) {
+    std::cout << "Usage:\n" << argv[0] << " <filename>" << '\n';
+    return 1;
+  }
 
   TriangleMesh mesh;
-  if (not mesh.ReadStlFile(path)) {
+  if (not mesh.readStlFile(argv[1])) {
     std::cerr << "Failed to open file" << '\n';
     return 1;
   }

@@ -1,17 +1,10 @@
 #pragma once
 
-#include <array>
+struct Xyz {
+  double x;
+  double y;
+  double z;
 
-class Xyz {
-private:
-  double m_x;
-  double m_y;
-  double m_z;
-
-public:
-  Xyz(double x, double y, double z) : m_x(x), m_y(y), m_z(z) {}
-  Xyz() : m_x(0.0), m_y(0.0), m_z(0.0) {}
-  double x() { return m_x; }
-  double y() { return m_y; }
-  double z() { return m_z; }
+  Xyz(double x_in, double y_in, double z_in) : x(x_in), y(y_in), z(z_in) {}
+  Xyz() : x(0.0), y(0.0), z(0.0) {}
 };

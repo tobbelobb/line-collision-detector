@@ -6,9 +6,9 @@
 TEST(LineCollisionDetectorTest, isCollision) {
   LineCollisionDetector lineCollisionDetector{};
   PivotPoints pivotPoints{};
-  ClosedFlatPath path{};
+  TriangleMesh mesh{};
 
-  EXPECT_TRUE(lineCollisionDetector.isCollision(pivotPoints, path));
+  EXPECT_TRUE(lineCollisionDetector.isCollision(pivotPoints, mesh));
 }
 
 int main(int argc, char **argv) {

@@ -1,1 +1,1 @@
-dir{.}: dir{src/} doc{README.md} manifest
+dir{.}: dir{linc/} doc{README.md} manifest

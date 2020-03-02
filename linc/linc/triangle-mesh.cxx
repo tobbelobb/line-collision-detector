@@ -1,5 +1,3 @@
-#pragma once
-
 #include <linc/triangle-mesh.hxx>
 
 struct stl_file {

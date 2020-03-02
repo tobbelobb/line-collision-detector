@@ -41,7 +41,7 @@ This is the suggested way to compile in that terminal
 ```
 Execute with:
 ```
-# /line-collision-detector/linc/linc/linc
+# /line-collision-detector/linc-out/linc/linc
 ```
 Or simply
 ```
@@ -60,4 +60,11 @@ be generated within the Docker container with the following commands:
 ```
 # cd /line-collision-detector/linc
 # ./make_compilation_database.sh
+```
+
+This allows you to start for example an rtags server on your native machine like this:
+```
+$ cd linc
+$ rdm &
+$ rc -J .
 ```
