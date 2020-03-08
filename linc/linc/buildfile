@@ -1,4 +1,12 @@
+# First target is default target
+exe{linc}: libue{linc} {cxx}{main} testscript{linc}
 
-exe{linc}: {hxx ixx txx cxx}{**}
+libue{linc}: {hxx cxx}{linc} \
+             {hxx}{pivot-points} \
+             {hxx cxx}{triangle-mesh} \
+             {hxx}{xyz}
+
+exe{triangle-mesh-test}: {cxx hxx}{triangle-mesh} \
+                         {cxx}{triangle-mesh-test}
 
 cxx.poptions =+ "-I$out_root" "-I$src_root"

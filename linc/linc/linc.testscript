@@ -1,0 +1,22 @@
+: Missing-filename
+: Checks error printout if no arguments given
+:
+: The $* means "executable and options string"
+: The 2>> means check error
+: The "EOE" means until End Of Error
+: The quotes around EOE means the string up until EOE
+: will be expanded, and not taken literally.
+: The != 0 means test will fail if return code is 0
+: The $0 will expand to the executable name
+$* 2>>"EOE" != 0
+Usage:
+$0 <filename>
+EOE
+
+: Any-filename
+: Checks standard case
+:
+: Checks that exactly 'Hello, World!' gets printed
+: when executable is called with argument 'any'
+$* 'any' > 'Hello, World!'
+
