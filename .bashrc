@@ -32,3 +32,5 @@ PS1='\[\e[1;31m\]DOCKER:\w#\[\e[m\] '
 
 alias gl="git branch; git log --oneline | head"
 alias ll='ls -alF'
+alias ..="cd .."
+alias ...="cd ../.."

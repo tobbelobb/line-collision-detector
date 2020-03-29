@@ -47,13 +47,6 @@ Or simply
 ```
 # run
 ```
-
-Yes, that is two layers of directories with the same name, containing an executable with that same name.
-The scheme goes like:
-```
-<repo>/<build2-project>/<source>/<binary>
-```
-
 ## Compilation database
 If you need the compilation database (`compile_commands.json`), this can
 be generated within the Docker container with the following commands:
