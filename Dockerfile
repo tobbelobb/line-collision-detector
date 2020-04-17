@@ -24,7 +24,7 @@ ARG SRC_PATH=/root/shfmt-src
 WORKDIR /home/user/shfmt-src
 
 RUN set -x && \
-    apk add --no-cache git=2.20.2-r0 && \
+    apk add --no-cache git=2.20.3-r0 && \
     git clone ${GITHUB_URI} ./ && \
     git checkout a3dcc70 && \
     mkdir -p /go/src/mvdan.cc/sh && \
