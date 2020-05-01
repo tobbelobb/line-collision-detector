@@ -10,13 +10,15 @@
 : The $0 will expand to the executable name
 $* 2>>"EOE" != 0
 Usage:
-$0 <filename>
+$0 <3d-model> <params>
 EOE
 
-: Any-filename
-: Checks standard case
-:
-: Checks that exactly 'Hello, World!' gets printed
-: when executable is called with argument 'any'
-$* 'any' > 'Hello, World!'
+: Non-existent-file
+: Checks behviour when file doesn't exist
+$* 'nonfile' 'params' 2>>EOE != 0
+Failed to open file
+EOE
 
+: Cube-input
+: Loading working stl file
+$* "$src_base/cube.stl" 'params' > 'Hello, World!'

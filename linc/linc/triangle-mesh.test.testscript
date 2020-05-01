@@ -3,5 +3,5 @@
 :
 : Checks that exactly 'Hello, Test!' gets printed
 : when executable is called with argument 'lalala'
-$* 'lalala' > 'Pello, Test!'
+$* 'lalala' > 'Hello, Test!'
 

@@ -2,10 +2,11 @@
 #include <linc/linc.hxx>
 #include <linc/triangle-mesh.hxx>
 
+
 int main(int argc, char *argv[]) {
 
-  if (argc < 2) {
-    std::cerr << "Usage:\n" << argv[0] << " <filename>\n";
+  if (argc < 3) {
+    std::cerr << "Usage:\n" << argv[0] << " <3d-model> <params>\n";
     return 1;
   }
 

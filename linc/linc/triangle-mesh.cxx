@@ -1,7 +1,5 @@
 #include <linc/triangle-mesh.hxx>
 
-struct stl_file {
-  stl_file() {}
-};
-
-bool TriangleMesh::readStlFile(std::string fileName) { return true; }
+bool TriangleMesh::readStlFile(std::string fileName) {
+  return stl_open(&m_stl, fileName.c_str());
+}
