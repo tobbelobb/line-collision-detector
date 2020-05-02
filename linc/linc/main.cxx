@@ -1,5 +1,6 @@
 #include <iostream>
 #include <linc/linc.hxx>
+#include <linc/params.hxx>
 #include <linc/triangle-mesh.hxx>
 
 int main(int argc, char *argv[]) {
@@ -10,11 +11,17 @@ int main(int argc, char *argv[]) {
   }
 
   TriangleMesh mesh{std::string{argv[1]}};
-  if (not mesh.isInitialized()) {
+  if (not mesh.isGood()) {
     std::cerr << "Failed to load " << argv[1] << '\n';
     return 1;
   }
 
-  std::cout << "Hello, World!\n";
+  Params params{std::string{argv[2]}};
+  if (not params.isGood()) {
+    std::cerr << "Failed to load " << argv[2] << '\n';
+    return 1;
+  }
+
+  std::cout << "No collision detected\n";
   return 0;
 }

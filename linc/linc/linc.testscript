@@ -19,6 +19,16 @@ $* 'nonfile' 'params' 2>>EOE != 0
 Failed to load nonfile
 EOE
 
-: Cube-input
-: Loading working stl file
-$* "$src_base/cube.stl" 'params' > 'Hello, World!'
+: Small-cube-nonfile-params
+: Loading working stl file but non-existend params file
+$* "$src_base/small-cube.stl" 'nonofile' 2>>EOE != 0
+Failed to load nonofile
+EOE
+
+: Small-cube-input
+: Loading working small stl file
+$* "$src_base/small-cube.stl" "$src_base/params" > 'No collision detected'
+
+#: Cube-input
+#: Analysis detects collision with big object
+#$* "$src_base/big-cube.stl" "$src_base/params" > 'Collision detected'

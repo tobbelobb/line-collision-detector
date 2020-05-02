@@ -11,5 +11,5 @@ struct TriangleMesh {
   TriangleMesh(std::string const fileName) { m_stl = stl_open(fileName); }
 
   bool writeBinaryStl(std::string fileName) const;
-  bool isInitialized() const { return m_stl.m_initialized; }
+  bool isGood() const { return m_stl.m_initialized; }
 };
