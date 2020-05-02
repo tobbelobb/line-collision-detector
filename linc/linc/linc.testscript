@@ -16,7 +16,7 @@ EOE
 : Non-existent-file
 : Checks behviour when file doesn't exist
 $* 'nonfile' 'params' 2>>EOE != 0
-Failed to open file
+Failed to load nonfile
 EOE
 
 : Cube-input

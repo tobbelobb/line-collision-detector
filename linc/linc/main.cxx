@@ -2,7 +2,6 @@
 #include <linc/linc.hxx>
 #include <linc/triangle-mesh.hxx>
 
-
 int main(int argc, char *argv[]) {
 
   if (argc < 3) {
@@ -10,9 +9,9 @@ int main(int argc, char *argv[]) {
     return 1;
   }
 
-  TriangleMesh mesh;
-  if (not mesh.readStlFile(argv[1])) {
-    std::cerr << "Failed to open file\n";
+  TriangleMesh mesh{std::string{argv[1]}};
+  if (not mesh.isInitialized()) {
+    std::cerr << "Failed to load " << argv[1] << '\n';
     return 1;
   }
 

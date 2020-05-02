@@ -3,8 +3,13 @@
 #include <linc/stl.hxx>
 #include <string>
 
-class TriangleMesh {
-public:
+struct TriangleMesh {
   stl_file m_stl;
-  bool readStlFile(std::string fileName);
+
+  TriangleMesh() = delete; // You can not initialize based on nothing
+
+  TriangleMesh(std::string const fileName) { m_stl = stl_open(fileName); }
+
+  bool writeBinaryStl(std::string fileName) const;
+  bool isInitialized() const { return m_stl.m_initialized; }
 };
