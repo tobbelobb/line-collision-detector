@@ -16,11 +16,11 @@ int main(int argc, char *argv[]) {
     return 1;
   }
 
-  Params params{std::string{argv[2]}};
-  if (not params.isGood()) {
-    std::cerr << "Failed to load " << argv[2] << '\n';
+  if (not validateParamsFile(argv[2])) {
+    std::cerr << "Validation of " << argv[2] << " failed\n";
     return 1;
   }
+  Pivots pivots{std::string{argv[2]}};
 
   std::cout << "No collision detected\n";
   return 0;

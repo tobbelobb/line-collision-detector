@@ -2,16 +2,16 @@
 : Checks standard case
 :
 : Checks what gets printed
-: when test executable called with the test params
+: when test executable called with the test params.
 $* "$src_base/params" >>EOE
-m_isGood: 1
-m_effectorPivots:
+effector:
  220 -220  230    5   -5 -230
 -140 -140 -130  270  270 -130
  130  130  130  130  130  130
-m_anchorsPivots:
+anchors:
      220     -220  1542.51  1317.51  -1435.3  -1670.3
 -1744.54 -1744.54  1140.88  1540.88   1011.6   611.63
    15.92    15.92   -32.19   -32.19   -31.23   -31.23
 
 EOE
+
