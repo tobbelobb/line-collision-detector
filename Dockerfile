@@ -39,6 +39,7 @@ RUN sudo apt-get update && sudo apt-get install -y --no-install-recommends \
       clang-format \
       vim \
       xsel \
+      gdb \
       python3-setuptools \
       python3-wheel \
       python3-pip && \
@@ -57,6 +58,7 @@ RUN sudo ln -s /line-collision-detector/linc-out/linc/linc /usr/bin/run
 COPY .gitconfig /home/user/.gitconfig
 COPY .vimrc /home/user/.vimrc
 COPY .bashrc /home/user/.bashrc
+COPY .gdbinit /home/user/.gdbinit
 COPY --from=shfmt-builder /go/bin/shfmt /bin/shfmt
 
 WORKDIR /
