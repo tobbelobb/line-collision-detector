@@ -1,7 +1,9 @@
 #include <linc/linc.hxx>
 
-bool isCollision(PivotPoints const &pivotPoints, TriangleMesh const &mesh) {
-  (void)pivotPoints;
+bool willCollide(TriangleMesh const &mesh, Pivots const &pivots,
+                 float layerHeight) {
+  (void)pivots;
   (void)mesh;
-  return true;
+  (void)layerHeight;
+  return false;
 }

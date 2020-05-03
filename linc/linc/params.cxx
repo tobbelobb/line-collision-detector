@@ -124,7 +124,6 @@ void Pivots::save(PivotTokens const &tokens) {
     effector(1, col) = toFloat(tokens.y);
     effector(2, col) = toFloat(tokens.z);
   }
-
   if (tokens.isAnchor()) {
     anchors(0, col) = toFloat(tokens.x);
     anchors(1, col) = toFloat(tokens.y);

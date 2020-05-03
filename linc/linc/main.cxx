@@ -22,6 +22,17 @@ int main(int argc, char *argv[]) {
   }
   Pivots pivots{std::string{argv[2]}};
 
-  std::cout << "No collision detected\n";
+  // TODO: millimeter type
+  float layerHeight = 1.0;
+  if (argc > 3) {
+    layerHeight = std::stof(argv[4]);
+  }
+
+  if (willCollide(mesh, pivots, layerHeight)) {
+    std::cout << "Collision detected\n";
+  } else {
+    std::cout << "No collision detected\n";
+  }
+
   return 0;
 }
