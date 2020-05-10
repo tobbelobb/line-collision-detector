@@ -17,7 +17,8 @@ RUN set -x && \
     cp -R . /go/src/mvdan.cc/sh && \
     CGO_ENABLED=0 go install -ldflags '-w -s -extldflags "-static"' mvdan.cc/sh/cmd/shfmt
 
-# Do apt-get and pip-based installs
+# Confirmed to work with
+# gcc:10.1.0
 FROM gcc:latest AS tools
 MAINTAINER Torbjørn Ludvigsen (tobben@hangprinter.org)
 
