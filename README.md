@@ -28,8 +28,9 @@ Starting from a Debian/Ubuntu OS:
 $ sudo apt install docker docker.io
 $ sudo usermod -a -G docker $USER
 $ sudo reboot
-...
+... <lots of time>
 $ ./build-docker.sh
+... <lots of time>
 $ ./docker-shell.sh
 #
 ```
@@ -54,10 +55,48 @@ be generated within the Docker container with the following commands:
 # cd /line-collision-detector/linc
 # ./make_compilation_database.sh
 ```
-
-This allows you to start for example an rtags server on your native machine like this:
+It actually creates two versions:
+```
+/line-collision-detector/compile_commands.json # with absolute paths
+```
+... as required by the `./tidy.sh` script. And also
+```
+/line-collision-detector/linc/compile_commands.json # with relative paths
+```
+... as required for running tools on your native machine.
+For example, you may start for example an rtags server (a c++ code indexing tool) on your native machine like this:
 ```
 $ cd linc
 $ rdm &
 $ rc -J .
 ```
+## Indent your code
+In a docker shell do
+```
+# cd /line-collision-detector
+# ./indent.sh
+```
+This will indent both c++ code and Bash code in this repo.
+
+## Tidy your code
+In a docker shell do
+```
+# cd /line-collision-detector
+# ./tidy.sh
+```
+This will check the c++ code and complain about places where we break our tidy-rules.
+
+
+## Compile with clang++-10
+Build2 has very clever ways to separate compilation configurations.
+For now, we don't use all those fancy features.
+Changing the compiler can be done by swapping `g++`
+with `clang++-10` in the file `line-collision-detector/linc-out/build/config.build`.
+g++-8 is also available in the dev docker image.
+
+## Update gcc
+If a new version of gcc/g++ comes out, and you want to use it, do
+```
+$ docker pull gcc
+$ ./build-docker.sh
+... <wait a long time>

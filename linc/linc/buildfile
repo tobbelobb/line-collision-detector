@@ -39,6 +39,8 @@ for t: cxx{**.test...}
   $d/exe{$n}: libue{linc}: bin.whole = false
 }
 
+cxx = g++
+
 # Include our own header files
 cxx.poptions =+ "-I$out_root" "-I$src_root"
 # Include headers from PrusaSlicer

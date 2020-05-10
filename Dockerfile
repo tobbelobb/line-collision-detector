@@ -1,17 +1,3 @@
-# Dependencies required to build line-collision-detector
-FROM gcc:latest AS base
-MAINTAINER Torbjørn Ludvigsen (tobben@hangprinter.org)
-
-# Setup a user with no-password sudo
-USER root
-RUN useradd -ms /bin/bash user
-RUN apt-get update && apt-get install -y --no-install-recommends sudo && \
-    echo "user ALL=(ALL:ALL) NOPASSWD: ALL" | sudo tee /etc/sudoers.d/dont-prompt-user-for-password
-USER user
-
-RUN sudo curl -sSfO https://download.build2.org/0.12.0/build2-install-0.12.0.sh && \
-    sudo sh build2-install-0.12.0.sh --yes --trust yes
-
 # Build shfmt
 FROM golang:1.12-alpine3.9 AS shfmt-builder
 
@@ -32,7 +18,15 @@ RUN set -x && \
     CGO_ENABLED=0 go install -ldflags '-w -s -extldflags "-static"' mvdan.cc/sh/cmd/shfmt
 
 # Do apt-get and pip-based installs
-FROM base AS tools
+FROM gcc:latest AS tools
+MAINTAINER Torbjørn Ludvigsen (tobben@hangprinter.org)
+
+# Setup a user with no-password sudo
+USER root
+RUN useradd -ms /bin/bash user
+RUN apt-get update && apt-get install -y --no-install-recommends sudo && \
+    echo "user ALL=(ALL:ALL) NOPASSWD: ALL" | sudo tee /etc/sudoers.d/dont-prompt-user-for-password
+USER user
 
 WORKDIR /home/user
 RUN \
@@ -43,6 +37,7 @@ wget -O - https://apt.llvm.org/llvm-snapshot.gpg.key | sudo apt-key add - && \
 sudo apt-get update && sudo apt-get install -y --no-install-recommends \
       clang-format-10 \
       clang-tidy-10 \
+      clang++-10 \
       vim \
       xsel \
       gdb \
@@ -57,6 +52,10 @@ sudo apt-get update && sudo apt-get install -y --no-install-recommends \
       python3-pip && \
     sudo apt-get autoremove -y && \
     sudo apt-get clean
+
+# build with clang++-10 since build2 fails to build with gcc v10.1.0
+RUN sudo curl -sSfO https://download.build2.org/0.12.0/build2-install-0.12.0.sh && \
+    sudo sh build2-install-0.12.0.sh --yes --trust yes --cxx clang++-10
 
 # Create a symlink so it becomes easier to run the binary...
 RUN sudo ln -s /line-collision-detector/linc-out/linc/linc /usr/bin/run

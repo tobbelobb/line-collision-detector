@@ -49,6 +49,9 @@
     // ignoring warnings thrown at vec_ctf in Altivec/PacketMath.h
     #pragma clang diagnostic ignored "-Wc11-extensions"
   #endif
+  #if __clang_major__ >= 10
+    #pragma clang diagnostic ignored "-Wdeprecated-anon-enum-enum-conversion"
+  #endif
 
 #elif defined __GNUC__
 
