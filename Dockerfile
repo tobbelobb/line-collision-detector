@@ -24,7 +24,7 @@ ARG SRC_PATH=/root/shfmt-src
 WORKDIR /home/user/shfmt-src
 
 RUN set -x && \
-    apk add --no-cache git=2.20.3-r0 && \
+    apk add --no-cache git=2.20.4-r0 && \
     git clone ${GITHUB_URI} ./ && \
     git checkout a3dcc70 && \
     mkdir -p /go/src/mvdan.cc/sh && \
@@ -36,10 +36,10 @@ FROM base AS tools
 
 WORKDIR /home/user
 RUN \
-echo "# llvm" >> /etc/apt/sources.list && \
-echo "deb http://apt.llvm.org/buster/ llvm-toolchain-buster-10 main" >> /etc/apt/sources.list && \
-echo "deb-src http://apt.llvm.org/buster/ llvm-toolchain-buster-10 main" >> /etc/apt/sources.list && \
-wget -O - https://apt.llvm.org/llvm-snapshot.gpg.key|sudo apt-key add - && \
+echo "# llvm" | sudo tee --append /etc/apt/sources.list && \
+echo "deb http://apt.llvm.org/buster/ llvm-toolchain-buster-10 main" | sudo tee --append /etc/apt/sources.list && \
+echo "deb-src http://apt.llvm.org/buster/ llvm-toolchain-buster-10 main" | sudo tee --append /etc/apt/sources.list && \
+wget -O - https://apt.llvm.org/llvm-snapshot.gpg.key | sudo apt-key add - && \
 sudo apt-get update && sudo apt-get install -y --no-install-recommends \
       clang-format-10 \
       clang-tidy-10 \

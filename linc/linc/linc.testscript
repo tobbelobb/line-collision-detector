@@ -10,7 +10,7 @@
 : The $0 will expand to the executable name
 $* 2>>"EOE" != 0
 Usage:
-$0 <3d-model> <params>
+$0 <3d-model> <params> [layer-height \(mm\)]
 EOE
 
 : Non-existent-file
