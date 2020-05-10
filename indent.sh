@@ -2,7 +2,7 @@
 
 # This script is executable from within the docker image
 
-find . -regex ".*\.\(hxx\|cxx\)" -not -path "./build/*" -not -path "./extern/*" -not -path "./bdep-configs/*" -exec clang-format -i {} +
+find . -regex ".*\.\(hxx\|cxx\)" -not -path "./build/*" -not -path "./extern/*" -not -path "./bdep-configs/*" -exec clang-format-10 -i {} +
 
 shfmt -w ./*.sh
 shfmt -w ./linc/*.sh

@@ -35,8 +35,14 @@ RUN set -x && \
 FROM base AS tools
 
 WORKDIR /home/user
-RUN sudo apt-get update && sudo apt-get install -y --no-install-recommends \
-      clang-format \
+RUN \
+echo "# llvm" >> /etc/apt/sources.list && \
+echo "deb http://apt.llvm.org/buster/ llvm-toolchain-buster-10 main" >> /etc/apt/sources.list && \
+echo "deb-src http://apt.llvm.org/buster/ llvm-toolchain-buster-10 main" >> /etc/apt/sources.list && \
+wget -O - https://apt.llvm.org/llvm-snapshot.gpg.key|sudo apt-key add - && \
+sudo apt-get update && sudo apt-get install -y --no-install-recommends \
+      clang-format-10 \
+      clang-tidy-10 \
       vim \
       xsel \
       gdb \
