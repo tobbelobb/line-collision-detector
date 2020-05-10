@@ -2,4 +2,4 @@
 *.o
 *.d
 compile_commands.json
-linc-out/
+linc-out/linc
