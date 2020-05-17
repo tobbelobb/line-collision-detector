@@ -2,22 +2,43 @@ This directory is used as the main base directory for build2 commands.
 
 
 ## Build2 cheat sheet
+### Build
+```
+# b
+```
+
+### Build and run the tests
+```
+# b test
+```
+
 ### Clean
 ```
 # b clean
 ```
 
+### Check which configs exist
+```
+# bdep config list
+```
+
 ### Create a config
 ```
-# bdep init --config-create ../bdep-configs/gcc cc config.cxx=g++
+# bdep init --config-create ../linc-gcc8 cc config.cxx=g++-8
 
 ```
 
-### Build and run all tests
+### Build with all configs
 ```
-# b test
+# bdep update -a
 ```
 
+### Build and run tests with all configs
+```
+# bdep test -a
+```
+
+## More on build2 tests
 The test setup deserves some more explanation.
 There are two kinds of tests:
 

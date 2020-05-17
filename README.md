@@ -85,9 +85,12 @@ In a docker shell do
 # ./tidy.sh
 ```
 This will check the c++ code and complain about places where we break our tidy-rules.
+It will also apply fixes automatically where it can.
 
 
 ## Compile with clang++-10
+
+
 
 ## Update gcc
 If a new version of gcc/g++ comes out, and you want to use it, do

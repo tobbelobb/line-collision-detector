@@ -59,7 +59,7 @@ RUN sudo curl -sSfO https://download.build2.org/0.12.0/build2-install-0.12.0.sh 
     sudo sh build2-install-0.12.0.sh --yes --trust yes --cxx clang++-10
 
 # Create a symlink so it becomes easier to run the binary...
-RUN sudo ln -s /line-collision-detector/linc-gcc/linc/linc /usr/bin/run
+RUN sudo ln -s /line-collision-detector/linc/linc/linc /usr/bin/run
 
 COPY .gitconfig /home/user/.gitconfig
 COPY .vimrc /home/user/.vimrc
