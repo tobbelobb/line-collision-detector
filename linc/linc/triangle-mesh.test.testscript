@@ -1,7 +1,0 @@
-: Any-filename
-: Checks standard case
-:
-: Checks that exactly 'Hello, Test!' gets printed
-: when executable is called with argument 'lalala'
-$* 'lalala' > 'Hello, Test!'
-
