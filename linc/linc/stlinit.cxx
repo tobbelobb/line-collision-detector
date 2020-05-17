@@ -26,6 +26,8 @@
 #include <stdlib.h>
 #include <string.h>
 
+#include <gsl/pointer>
+
 #include <linc/stl.hxx>
 
 #ifndef SEEK_SET
@@ -34,7 +36,7 @@
 
 static FILE *stl_open_count_facets(stl_file &stl, std::string const fileName) {
   // Open the file in binary mode first.
-  FILE *fp = fopen(fileName.c_str(), "rb");
+  gsl::owner<FILE *> fp = fopen(fileName.c_str(), "rb");
   if (fp == nullptr) {
     return nullptr;
   }
@@ -76,7 +78,7 @@ static FILE *stl_open_count_facets(stl_file &stl, std::string const fileName) {
       stl.stats.header[80] = '\0';
 
     // Read the int following the header.  This should contain # of facets.
-    uint32_t header_num_facets;
+    uint32_t header_num_facets = 0;
     fread(&header_num_facets, sizeof(uint32_t), 1, fp);
   }
   // Otherwise, if the .STL file is ASCII, then do the following:

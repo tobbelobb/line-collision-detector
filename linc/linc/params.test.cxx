@@ -1,5 +1,7 @@
 #include <iostream>
 
+#include <gsl/span_ext>
+
 #include <linc/params.hxx>
 
 int tokenizeWellFormedString() {
@@ -30,7 +32,9 @@ int tokenizeTooManyTokens() {
 int main(int argc, char **argv) {
   // Give testscript some output to assert on
   if (argc > 1) {
-    Pivots pivots{argv[1]};
+    gsl::span<char *> const args(argv, argc);
+    auto const paramsFileName = gsl::at(args, 1);
+    Pivots pivots{paramsFileName};
     std::cout << pivots << '\n';
   }
 

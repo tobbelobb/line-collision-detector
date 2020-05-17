@@ -8,13 +8,13 @@
 
 int main(int argc, char *argv[]) {
 
-  if (argc != 3 and argc != 4) {
+  if (not(argc == 3 or argc == 4)) {
     std::cerr << "Usage:\n"
               << *argv << " <3d-model> <params> [layer-height (mm)]\n";
     return 1;
   }
 
-  gsl::span<char *> args(argv, argc);
+  gsl::span<char *> const args(argv, argc);
   auto const modelFileName = gsl::at(args, 1);
   auto const paramsFileName = gsl::at(args, 2);
 

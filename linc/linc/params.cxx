@@ -52,27 +52,27 @@ PivotTokens tokenize(std::string const &line) {
   return tokens;
 }
 
-static size_t pivotNameToColumn(std::string const &name) {
+static Pivots::ColumnIndex pivotNameToColumn(std::string const &name) {
   std::string const lastTwo = name.substr(name.size() - 2);
   if (lastTwo == "A1") {
-    return 0;
+    return Pivots::ColumnIndex::A1;
   }
   if (lastTwo == "A2") {
-    return 1;
+    return Pivots::ColumnIndex::A2;
   }
   if (lastTwo == "B1") {
-    return 2;
+    return Pivots::ColumnIndex::B1;
   }
   if (lastTwo == "B2") {
-    return 3;
+    return Pivots::ColumnIndex::B2;
   }
   if (lastTwo == "C1") {
-    return 4;
+    return Pivots::ColumnIndex::C1;
   }
   if (lastTwo == "C2") {
-    return 5;
+    return Pivots::ColumnIndex::C2;
   }
-  return 6;
+  return Pivots::ColumnIndex::INVALID;
 }
 
 static bool valid(PivotTokens const &tokens) {
@@ -85,7 +85,7 @@ static bool valid(PivotTokens const &tokens) {
         << tokens.name << '\n';
     return false;
   }
-  if (pivotNameToColumn(tokens.name) > 5) {
+  if (pivotNameToColumn(tokens.name) == Pivots::ColumnIndex::INVALID) {
     std::cerr << "Invalid pivot name does not end with 'A1', 'A2', 'B1', 'B2', "
                  "'C1', or 'C2': "
               << tokens.name << '\n';

@@ -15,6 +15,7 @@ struct PivotTokens {
   std::string y{};
   std::string z{};
 
+
   bool isEffector() const { return name.substr(0, 8) == "effector"; }
   bool isAnchor() const { return name.substr(0, 6) == "anchor"; }
 
@@ -22,10 +23,7 @@ struct PivotTokens {
     return name.empty() or x.empty() or y.empty() or z.empty();
   }
 
-  bool operator==(PivotTokens const &other) const {
-    return name == other.name and x == other.x and y == other.y and
-           z == other.z;
-  }
+  bool operator==(PivotTokens const &) const = default;
 };
 
 inline std::ostream &operator<<(std::ostream &os, PivotTokens const &tokens) {
@@ -36,8 +34,18 @@ inline std::ostream &operator<<(std::ostream &os, PivotTokens const &tokens) {
 
 class Pivots {
 public:
-  Eigen::Matrix<float, 3, 6> effector = Eigen::MatrixXf::Zero(3, 6);
-  Eigen::Matrix<float, 3, 6> anchors = Eigen::MatrixXf::Zero(3, 6);
+  static auto constexpr cols = 6;
+  Eigen::Matrix<float, 3, cols> effector = Eigen::MatrixXf::Zero(3, cols);
+  Eigen::Matrix<float, 3, cols> anchors = Eigen::MatrixXf::Zero(3, cols);
+  enum ColumnIndex {
+    A1 = 0,
+    A2 = 1,
+    B1 = 2,
+    B2 = 3,
+    C1 = 4,
+    C2 = 5,
+    INVALID = 6
+  };
 
   Pivots(std::string const &fileName);
 
