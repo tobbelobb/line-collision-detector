@@ -31,7 +31,7 @@ Associations between executables and testscripts are created in the buildfile as
 #### Unit tests
 These are written in c++.
 They are defined in files `somename.test.cxx`, who are compiled into executables `somename.test`.
-The test executables end up in the same `../linc-out` directory where the main `linc` binary itself ends up.
+The test executables end up in the same directory where the main `linc` binary itself ends up.
 They are also symlinked from the source directory like the `linc` binary.
 To run a unit tests means to execute its executable with no arguments.
 

@@ -26,7 +26,7 @@
 #include <stdlib.h>
 #include <string.h>
 
-#include <gsl/pointer>
+#include <gsl/pointers>
 
 #include <linc/stl.hxx>
 

@@ -1,0 +1,34 @@
+# Created automatically by the config module, but feel free to edit.
+#
+config.version = 1
+
+config.config.persist = 'config.import.*'@unused=save
+
+config.cc.poptions = [null]
+config.cc.coptions = [null]
+config.cc.loptions = [null]
+config.cc.aoptions = [null]
+config.cc.libs = [null]
+
+config.cxx = clang++-10
+config.cxx.poptions = [null]
+config.cxx.coptions = [null]
+config.cxx.loptions = [null]
+config.cxx.aoptions = [null]
+config.cxx.libs = [null]
+
+#config.c =
+config.c.poptions = [null]
+config.c.coptions = [null]
+config.c.loptions = [null]
+config.c.aoptions = [null]
+config.c.libs = [null]
+
+config.bin.lib = both
+config.bin.exe.lib = shared static
+config.bin.liba.lib = static shared
+config.bin.libs.lib = shared static
+config.bin.rpath = [null]
+config.bin.rpath_link = [null]
+#config.bin.ar =
+#config.bin.ranlib =

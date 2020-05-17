@@ -1,5 +1,0 @@
-config.version = 1
-
-# This compiler will be used to compile linc-out
-# Change to clang++-10 if you want to use that compiler
-config.cxx = g++

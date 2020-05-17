@@ -42,7 +42,7 @@ This is the suggested way to compile in that terminal
 ```
 Execute with:
 ```
-# /line-collision-detector/linc-out/linc/linc
+# /line-collision-detector/linc-gcc/linc/linc
 ```
 Or simply
 ```
@@ -88,11 +88,6 @@ This will check the c++ code and complain about places where we break our tidy-r
 
 
 ## Compile with clang++-10
-Build2 has very clever ways to separate compilation configurations.
-For now, we don't use all those fancy features.
-Changing the compiler can be done by swapping `g++`
-with `clang++-10` in the file `line-collision-detector/linc-out/build/config.build`.
-g++-8 is also available in the dev docker image.
 
 ## Update gcc
 If a new version of gcc/g++ comes out, and you want to use it, do
