@@ -43,11 +43,8 @@ cxx = g++
 
 # Include our own header files
 cxx.poptions =+ "-I$out_root" "-I$src_root"
-# Include headers from PrusaSlicer
-#cxx.poptions =+ "-I$src_root/../extern/prusaSlicer"
 # Include headers for the headers-only eigen library
-# These are needed by PrusaSlicer...
-cxx.poptions =+ "-I$src_root/../extern/eigen"
+cxx.poptions =+ "-I$src_root/extern/eigen"
 
 # Follow cpp core guidelines
-cxx.poptions =+ "-I$src_root/../extern/cppcore"
+cxx.poptions =+ "-I$src_root/extern/cppcore"
