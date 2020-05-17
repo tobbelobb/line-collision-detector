@@ -1,0 +1,3 @@
+[submodule "linc"]
+	path = linc
+	url = https://gitlab.com/hangprinter/linc
