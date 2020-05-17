@@ -38,6 +38,11 @@ This directory is used as the main base directory for build2 commands.
 # bdep test -a
 ```
 
+### Clean for all configs
+```
+# bdep clean -a
+```
+
 ## More on build2 tests
 The test setup deserves some more explanation.
 There are two kinds of tests:
