@@ -1,3 +1,7 @@
+#!/usr/bin/env bash
+
+# This script is executable from within the Docker image
+cd /line-collision-detector/linc
 b -vn clean update |& compiledb
 # clang-tidy wants absolute paths, and it should be executed from ..
 cp compile_commands.json ..
