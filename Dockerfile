@@ -63,6 +63,12 @@ RUN sudo curl -sSfO https://download.build2.org/0.12.0/build2-install-0.12.0.sh 
 # Create a symlink so it becomes easier to run the binary...
 RUN sudo ln -s /line-collision-detector/linc/linc/linc /usr/bin/run
 
+COPY compiledb_file_extension_regex.patch /home/user/compiledb_file_extension_regex.patch
+
+# Patch compiledb to recognize the .c++ file extension. Needed for creating compile_commands.json
+RUN sudo patch /usr/local/lib/python3.7/dist-packages/compiledb/parser.py /home/user/compiledb_file_extension_regex.patch && \
+    rm -rf /home/user/compiledb_file_extension_regex.patch
+
 COPY .gitconfig /home/user/.gitconfig
 COPY .vimrc /home/user/.vimrc
 COPY .bashrc /home/user/.bashrc
