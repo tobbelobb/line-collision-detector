@@ -9,4 +9,4 @@ fi
 # This script is executable from within the docker image
 ./make_compilation_database.sh
 cd /line-collision-detector/linc
-run-clang-tidy-10 -p=.. -checks="-*,cppcoreguidelines-*,modernize-*,bugprone-*,clang-analyzer-*,misc-*,performance-*,readability-*,cert-*" -fix $FILES 2>/dev/null
+run-clang-tidy-10 -p=.. -checks="-*,cppcoreguidelines-*,modernize-*,bugprone-*,clang-analyzer-*,misc-*,performance-*,readability-*" -fix $FILES 2>/dev/null
