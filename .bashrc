@@ -40,5 +40,5 @@ PATH=$PATH:/line-collision-detector
 
 # Avoid having to write .sh all the time
 alias tidy="tidy.sh"
-alias indent="intent.sh"
+alias indent="indent.sh"
 alias make_compilation_database="make_compilation_database.sh"
