@@ -34,3 +34,11 @@ alias gl="git branch; git log --oneline | head"
 alias ll='ls -alF'
 alias ..="cd .."
 alias ...="cd ../.."
+
+# Avoid having to put path in front of every shell script name all the time
+PATH=$PATH:/line-collision-detector
+
+# Avoid having to write .sh all the time
+alias tidy="tidy.sh"
+alias indent="intent.sh"
+alias make_compilation_database="make_compilation_database.sh"
