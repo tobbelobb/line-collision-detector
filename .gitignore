@@ -1,4 +1,4 @@
 compile_commands.json
-linc-gcc/linc
-linc-clang/linc
+linc-gcc/linc/linc
+linc-clang/linc/linc
 linc/linc/linc
