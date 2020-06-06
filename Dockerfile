@@ -41,6 +41,7 @@ sudo apt-get update && sudo apt-get install -y --no-install-recommends \
       clang++-10 \
       vim \
       xsel \
+      cmake \
       gdb \
       python3-setuptools \
       python3-wheel \
@@ -58,7 +59,6 @@ sudo apt-get update && sudo apt-get install -y --no-install-recommends \
 RUN sudo curl -sSfO https://download.build2.org/0.12.0/build2-install-0.12.0.sh && \
     sudo sh build2-install-0.12.0.sh --yes --trust yes --cxx clang++-10 && \
     sudo rm -rf build2-toolchain-0.12.0.tar.xz build2-toolchain-0.12 build2-install-0.12.0.sh
-
 
 # Create a symlink so it becomes easier to run the binary...
 RUN sudo ln -s /line-collision-detector/linc/linc/linc /usr/bin/run

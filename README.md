@@ -48,12 +48,12 @@ Or simply
 ```
 # run
 ```
+
 ## Compilation database
 If you need the compilation database (`compile_commands.json`), this can
-be generated within the Docker container with the following commands:
+be generated within the Docker container with the following command:
 ```
-# cd /line-collision-detector/linc
-# ./make_compilation_database.sh
+# make-compilation-database.sh
 ```
 It actually creates two versions:
 ```
@@ -71,25 +71,29 @@ $ rdm &
 $ rc -J .
 ```
 ## Indent your code
-In a docker shell do
+In a docker shell, from anywhere, do
 ```
-# cd /line-collision-detector
-# ./indent.sh
+# indent.sh
 ```
 This will indent both c++ code and Bash code in this repo.
 
 ## Tidy your code
-In a docker shell do
+In a docker shell, from anywhere, do
 ```
-# cd /line-collision-detector
-# ./tidy.sh
+# tidy.sh
 ```
+If you only want to tidy one file, give the filename as an argument
+
 This will check the c++ code and complain about places where we break our tidy-rules.
 It will also apply fixes automatically where it can.
 
-
-## Compile with clang++-10
-
+# Compile faster
+Some of our header-only dependencies can be built into static library files instead.
+This is useful during development since it gives faster compile times.
+To enable this, do
+```
+# faster.sh
+```
 
 
 ## Update gcc
