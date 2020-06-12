@@ -21,13 +21,13 @@ CHECKS="-*,cppcoreguidelines-*,modernize-*,bugprone-*,clang-analyzer-*,misc-*,pe
 /line-collision-detector/make-compilation-database.sh
 cd /line-collision-detector/linc
 
-echo "Check application code"
-run-clang-tidy-10 -p=.. -checks=$CHECKS -fix -quiet $APPLICATION_CODE 2>/dev/null
+echo "Tidy application code"
+run-clang-tidy-10 -p=.. -checks=$CHECKS -quiet $APPLICATION_CODE 2>/dev/null
 
 if [ -z "$1" ]; then
   # Allow magic numbers in test code
   CHECKS="$CHECKS,-readability-magic-numbers,-cppcoreguidelines-avoid-magic-numbers"
-  echo "
-  Check test code"
-  run-clang-tidy-10 -p=.. -checks=$CHECKS -fix -quiet $TESTS 2>/dev/null
+  echo ""
+  echo "Tidy test code"
+  run-clang-tidy-10 -p=.. -checks=$CHECKS -quiet $TESTS 2>/dev/null
 fi
