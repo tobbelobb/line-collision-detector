@@ -8,11 +8,11 @@ APPLICATION_CODE="/line-collision-detector/linc/linc/([a-z]|-|_|[A-Z]|[0-9])+\.c
 
 # If there's an argument, use it and assume it is application code
 if [ $1 ]; then
-  # Convert a relative path to an absolute path
-  APPLICATION_CODE=`find /line-collision-detector/linc/ -name "*$1*"`
+	# Convert a relative path to an absolute path
+	APPLICATION_CODE=$(find /line-collision-detector/linc/ -name "*$1*")
 	# Cut away trailing ++ because run-clang-tidy will interpret them as a regex
 	APPLICATION_CODE=${APPLICATION_CODE%++}
-  echo $APPLICATION_CODE
+	echo $APPLICATION_CODE
 fi
 
 CHECKS="-*,cppcoreguidelines-*,modernize-*,bugprone-*,clang-analyzer-*,misc-*,performance-*,readability-*"
@@ -25,9 +25,9 @@ echo "Tidy application code"
 run-clang-tidy-10 -p=.. -checks=$CHECKS -quiet $APPLICATION_CODE 2>/dev/null
 
 if [ -z "$1" ]; then
-  # Allow magic numbers in test code
-  CHECKS="$CHECKS,-readability-magic-numbers,-cppcoreguidelines-avoid-magic-numbers"
-  echo ""
-  echo "Tidy test code"
-  run-clang-tidy-10 -p=.. -checks=$CHECKS -quiet $TESTS 2>/dev/null
+	# Allow magic numbers in test code
+	CHECKS="$CHECKS,-readability-magic-numbers,-cppcoreguidelines-avoid-magic-numbers"
+	echo ""
+	echo "Tidy test code"
+	run-clang-tidy-10 -p=.. -checks=$CHECKS -quiet $TESTS 2>/dev/null
 fi

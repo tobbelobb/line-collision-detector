@@ -3,7 +3,7 @@
 # |& pipes both stdout and stderr
 
 b "$@" |&
-  awk '{
+	awk '{
          line=$0;
          ORS="";
          if (line ~/(\.c|\.cpp|\.h|\.c\+\+|\.h\+\+):[0-9]+:[0-9]+:.?.?.?.?.?.?.?.?.?.?.?.?.?.?.?.?.?.?(note|error):/)
@@ -20,4 +20,4 @@ b "$@" |&
          {
              print(line "\n");
          };
-       }' | head -n 40;
+       }' | head -n 40
