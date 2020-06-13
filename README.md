@@ -38,6 +38,7 @@ $ ./docker-shell.sh
 This is the suggested way to compile in that terminal
 ```
 # cd /line-collision-detector/linc
+# faster
 # b
 ```
 Execute with:
