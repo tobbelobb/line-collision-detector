@@ -4,7 +4,7 @@
 # non-portable, but much faster to compile during development
 
 # Build the static version of spdlog
-cd /line-collision-detector/linc/extern/spdlog-1.6.0/
+cd /line-collision-detector/linc/extern/spdlog/spdlog-1.6.0/
 mkdir build && cd build && cmake .. && make -j
 
 # Tell build2 to use it
