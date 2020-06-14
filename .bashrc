@@ -32,13 +32,22 @@ PS1='\[\e[1;31m\]DOCKER:\w#\[\e[m\] '
 
 alias gl="git branch; git log --oneline | head"
 alias ll='ls -alF'
+
+# Jumping between the most frequent directories must be fast
 alias ..="cd .."
 alias ...="cd ../.."
+alias ....="cd ../../.."
+alias cdl="cd /line-collision-detector/"
+alias cdll="cd /line-collision-detector/linc/"
+alias cdlle="cd /line-collision-detector/linc/extern/"
+alias cdlll="cd /line-collision-detector/linc/linc/"
+# cd to previous directory in bash is `cd -`. Avoid the need for space.
+alias cd-="cd -"
 
-# Avoid having to put path in front of every shell script name all the time
+# Run shell scripts from any dir, no need to cd
 PATH=$PATH:/line-collision-detector
 
-# Avoid having to write .sh all the time
+# Avoid having to write .sh for frequently used scripts
 alias tidy="tidy.sh"
 alias indent="indent.sh"
 alias make-compilation-database="make-compilation-database.sh"

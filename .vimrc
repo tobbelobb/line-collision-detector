@@ -108,9 +108,9 @@ fun! <SID>StripTrailingWhitespaces()
 endfun
 autocmd BufWritePre * :call <SID>StripTrailingWhitespaces()
 
+" Recognize .h++ files as C++ source files
+autocmd BufNewFile,BufRead *.h++ setfiletype cpp
+
 set path+=**
 set wildmenu
 set wildmode=longest:full
-
-" Make clipboard contents reachable from bash even after vim :q
-autocmd VimLeave * call system("xsel -ib", getreg('+'))
