@@ -43,6 +43,9 @@ alias cdlle="cd /line-collision-detector/linc/extern/"
 alias cdlll="cd /line-collision-detector/linc/linc/"
 # cd to previous directory in bash is `cd -`. Avoid the need for space.
 alias cd-="cd -"
+alias u="cd .."
+alias d="cd linc"
+
 
 # Run shell scripts from any dir, no need to cd
 PATH=$PATH:/line-collision-detector
@@ -52,4 +55,7 @@ alias tidy="tidy.sh"
 alias indent="indent.sh"
 alias make-compilation-database="make-compilation-database.sh"
 alias faster="faster.sh"
+
+# Some vim specific stuff
 alias bv="bv.sh"
+alias v="vim"
