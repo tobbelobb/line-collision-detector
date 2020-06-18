@@ -59,3 +59,4 @@ alias faster="faster.sh"
 # Some vim specific stuff
 alias bv="bv.sh"
 alias v="vim"
+alias t="t.sh"
