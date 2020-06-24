@@ -9,6 +9,11 @@ Here's a visualisation of where my HP's lines would touch, if it tried to print 
 
 ![](media/demo_small.gif)
 
+The purpose of this project is not to make fancy visualizations, but to give Hangprinter users
+a quick answer to the question
+
+![](media/does_it_fit.png)
+
 ## Toolchain
 
 This project compiles in Docker
