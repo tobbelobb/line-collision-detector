@@ -7,8 +7,7 @@ print, before pressing print.
 
 Here's a visualisation of where my HP's lines would touch, if it tried to print a 980 mm tall Benchy:
 
-![](media/demo_norot.gif =320x)
-![](media/demo.gif)
+![](media/demo_norot_small.gif)
 
 ## Toolchain
 
