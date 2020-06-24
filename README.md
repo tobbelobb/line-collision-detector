@@ -5,6 +5,11 @@ That means than Hangprinter users must plan carefully, so the lines never touch 
 This program should let Hangprinter users verify that lines will or will not collide with the
 print, before pressing print.
 
+Here's a visualisation of where my HP's lines would touch, if it tried to print a 980 mm tall Benchy:
+
+![](media/demo_norot.gif =320x)
+![](media/demo.gif)
+
 ## Toolchain
 
 This project compiles in Docker
@@ -29,6 +34,7 @@ $ sudo apt install docker docker.io
 $ sudo usermod -a -G docker $USER
 $ sudo reboot
 ... <lots of time>
+$ docker pull gcc
 $ ./build-docker.sh
 ... <lots of time>
 $ ./docker-shell.sh
@@ -87,6 +93,17 @@ If you only want to tidy one file, give the filename as an argument
 
 This will check the c++ code and complain about places where we break our tidy-rules.
 It will also apply fixes automatically where it can.
+
+# Build and run all tests
+In the Docker shell, do
+```
+# cd /line-collision-detector/linc/
+# b test
+```
+There's an abbreviation for that, so you can just do
+```
+# t
+```
 
 # Compile faster
 Some of our header-only dependencies can be built into static library files instead.
