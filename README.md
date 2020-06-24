@@ -22,6 +22,7 @@ Creating the above gif took me (tobben) ~1h, including cleaning and reducing the
 When modelling, we want an answer within seconds.
 That is why I've made a from-scratch analysis tool, written in C++20.
 It is found in the linc subrepo.
+It is not yet working.
 
 ## Toolchain
 
