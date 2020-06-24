@@ -14,6 +14,15 @@ a quick answer to the question
 
 ![](media/does_it_fit.png)
 
+The above gif was made with Openscad and `demo-and-algorithm-outline.scad` found in this repo.
+Unfortunately, Openscad is not a practical solution, since it requires a very clean and very small mesh
+to be able to perform the required analysis.
+
+Creating the above gif took me (tobben) ~1h, including cleaning and reducing the mesh.
+When modelling, we want an answer within seconds.
+That is why I've made a from-scratch analysis tool, written in C++20.
+It is found in the linc subrepo.
+
 ## Toolchain
 
 This project compiles in Docker
