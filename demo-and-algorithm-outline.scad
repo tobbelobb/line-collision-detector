@@ -76,7 +76,7 @@ module theModelPartial(h) {
 }
 
 module volumeEnclosedByLineMovements(h) {
-  mirror([0,1,0])
+  // mirror([0,1,0])
   for (i = [0:1:len(effectorPivots) - 1])
     hull() {
       translate(effectorPivots[i]) {
