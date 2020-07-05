@@ -9,4 +9,4 @@ mkdir build && cd build && cmake .. && make -j
 
 # Tell build2 to use it
 cd /line-collision-detector/linc/linc/
-sed --in-place "s/lib{spdlog_slow}/lib{spdlog}/" buildfile
+sed --in-place "s/spdlog\/lib{spdlog_slow}/spdlog\/lib{spdlog}/" buildfile

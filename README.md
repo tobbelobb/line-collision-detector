@@ -22,7 +22,14 @@ Creating the above gif took me (tobben) ~1h, including cleaning and reducing the
 When modelling, we want an answer within seconds.
 That is why I've made a from-scratch analysis tool, written in C++20.
 It is found in the linc subrepo.
-It is not yet working.
+
+## Status
+Maybe works. Don't trust it too much. Confirm with other methods.
+
+The program should now be able to detect collisions for prints where all layers are 2D-convex,
+and also for all spiral vase prints regardless if their layers are 2D-convex or not.
+
+The software has not been thoroughly tested yet, so expect bugs and beta-quality.
 
 ## Toolchain
 
