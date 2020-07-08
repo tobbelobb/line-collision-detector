@@ -24,12 +24,12 @@ That is why I've made a from-scratch analysis tool, written in C++20.
 It is found in the linc subrepo.
 
 ## Status
-Maybe works. Don't trust it too much. Confirm with other methods.
+"Should" work.
 
-The program should now be able to detect collisions for prints where all layers are 2D-convex,
-and also for all spiral vase prints regardless if their layers are 2D-convex or not.
+Means: Code is written and tested a few times.
+Don't trust it too much. Confirm with other methods.
 
-The software has not been thoroughly tested yet, so expect bugs and beta-quality.
+Until more thorough testing has been done, expect bugs and beta-quality.
 
 ## Toolchain
 
