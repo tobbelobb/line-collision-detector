@@ -77,6 +77,11 @@ Or simply
 # run
 ```
 
+It will tell you how it wants to be used.
+Be aware that it will create a file called `linc.log`.
+It may also create a debug model, if you asked for it.
+This model is meant to be inspected visually in another program.
+
 ## Compilation database
 If you need the compilation database (`compile_commands.json`), this can
 be generated within the Docker container with the following command:
