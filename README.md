@@ -24,12 +24,22 @@ That is why I've made a from-scratch analysis tool, written in C++20.
 It is found in the linc subrepo.
 
 ## Status
-"Should" work.
+Should work.
 
-Means: Code is written and tested a few times.
-Don't trust it too much. Confirm with other methods.
+Code is written and tested a few times.
+There are no known bugs, but there might be bugs.
 
-Until more thorough testing has been done, expect bugs and beta-quality.
+### How to Build Trust in the Computed Result
+
+If you get collision detected:
+Use the -o flag and generate a debug model.
+Inspect this model in any other program that can visualize stl files.
+Confirm visually that a detected collision is indeed a collision.
+
+If you get no collision detected:
+Scale up your model gradually until you get collision detected.
+Inspect the collision with -o.
+Convince yourself that any smaller version would avoid collision.
 
 ## Toolchain
 
