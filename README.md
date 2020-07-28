@@ -78,7 +78,15 @@ This is the suggested way to compile in that terminal
 # faster
 # b
 ```
-Execute with:
+If it complains that buildfile doesn't exist, then the linc submodule hasn't been updated.
+On the host system, do this:
+```
+$ git submodule update --init --recursive
+```
+... and try again to build like described above.
+
+
+After a successful build, execute with:
 ```
 # /line-collision-detector/linc-gcc/linc/linc
 ```
