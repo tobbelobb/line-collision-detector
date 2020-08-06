@@ -138,7 +138,7 @@ If you only want to tidy one file, give the filename as an argument
 This will check the c++ code and complain about places where we break our tidy-rules.
 It will also apply fixes automatically where it can.
 
-# Build and run all tests
+## Build and run all tests
 In the Docker shell, do
 ```
 # cd /line-collision-detector/linc/
@@ -149,7 +149,7 @@ There's an abbreviation for that, so you can just do
 # t
 ```
 
-# Compile faster
+## Compile faster
 Some of our header-only dependencies can be built into static library files instead.
 This is useful during development since it gives faster compile times.
 To enable this, do
