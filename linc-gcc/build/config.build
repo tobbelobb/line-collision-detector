@@ -12,7 +12,7 @@ config.cc.libs = [null]
 
 config.cxx = g++
 config.cxx.poptions = [null]
-config.cxx.coptions = -g -Wall -Wextra -Wold-style-cast -Wnon-virtual-dtor -pedantic -Wcast-align -Wunused -Woverloaded-virtual -Wpedantic -Wconversion -Wsign-conversion -Wmisleading-indentation -Wnull-dereference -Wdouble-promotion -Werror -O3 -march=native
+config.cxx.coptions = -pthread -g -Wall -Wextra -Wold-style-cast -Wnon-virtual-dtor -pedantic -Wcast-align -Wunused -Woverloaded-virtual -Wpedantic -Wconversion -Wsign-conversion -Wmisleading-indentation -Wnull-dereference -Wdouble-promotion -Werror -O3 -march=native
 config.cxx.loptions = [null]
 config.cxx.aoptions = [null]
 config.cxx.libs = [null]
@@ -30,5 +30,7 @@ config.bin.liba.lib = static shared
 config.bin.libs.lib = shared static
 config.bin.rpath = [null]
 config.bin.rpath_link = [null]
+
+#config.bin.ld = lld-10
 #config.bin.ar =
 #config.bin.ranlib =
