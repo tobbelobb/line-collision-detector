@@ -29,7 +29,29 @@ Should work.
 Code is written and tested a few times.
 There are no known bugs, but there might be bugs.
 
-### How to Build Trust in the Computed Result
+## Quick Get Started
+Fetch And Run The Development Image:
+```
+$ ./docker-shell.sh
+```
+
+Compile The Binary:
+```
+# cd /line-collision-detector/linc
+# faster
+# b
+```
+
+Run The Binary:
+```
+# run
+```
+
+It will tell you how it wants to be used.
+
+If something didn't work, see [troubleshooting](#troubleshooting):
+
+## How to Build Trust in the Computed Result
 
 If you get collision detected:
 Use the -o flag and generate a debug model.
@@ -41,70 +63,25 @@ Scale up your model gradually until you get collision detected.
 Inspect the collision with -o.
 Convince yourself that any smaller version would avoid collision.
 
-## Toolchain
+## More In Depth Info For Developers
 
-This project compiles in Docker
+### Structure
 
-Everything inside `.` will be available from Docker at compile time.
-This means you can edit the source files from your own OS, using any IDE or text editor you'd like.
+This project has a Docker environment in which it compiles and runs.
+The Docker project lives in this (`line-collision-detector`) directory.
 
-Generally, everything one might need from the OS in order to compile and work on this project
-should be available in this directory.
-
-One level deeper, that is inside `./linc`, we have a build2 project defined.
+One level deeper, that is inside `line-collision-detector/linc`, we have a build2 project defined.
 The build2 build tool, and its norms, dictates the structure and contents of that folder.
 See [Canonical Project Structure](https://build2.org/build2-toolchain/doc/build2-toolchain-intro.xhtml#structure-canonical)
 in the build2 introduction.
 
-Yet another level deeper, inside `./linc/linc`, is the actual source.
+Yet another level deeper, inside `line-collision-detector/linc/linc`, is the actual source.
 
-## Compiling
-Starting from a Debian/Ubuntu OS:
-```
-$ sudo apt install docker docker.io
-$ sudo usermod -a -G docker $USER
-$ sudo reboot
-... <lots of time>
-$ docker pull gcc
-$ ./build-docker.sh
-... <lots of time>
-$ ./docker-shell.sh
-#
-```
-... and from there on you have access to one bash shell within the compile-container.
-This is the suggested way to compile in that terminal
-```
-# cd /line-collision-detector/linc
-# faster
-# b
-```
-If it complains that buildfile doesn't exist, then the linc submodule hasn't been updated.
-On the host system, do this:
-```
-$ git submodule update --init --recursive
-```
-... and try again to build like described above.
-
-
-After a successful build, execute with:
-```
-# /line-collision-detector/linc-gcc/linc/linc
-```
-Or simply
-```
-# run
-```
-
-It will tell you how it wants to be used.
-Be aware that it will create a file called `linc.log`.
-It may also create a debug model, if you asked for it.
-This model is meant to be inspected visually in another program.
-
-## Compilation database
+### Compilation database
 If you need the compilation database (`compile_commands.json`), this can
 be generated within the Docker container with the following command:
 ```
-# make-compilation-database.sh
+# make-compilation-database
 ```
 It actually creates two versions:
 ```
@@ -121,46 +98,59 @@ $ cd linc
 $ rdm &
 $ rc -J .
 ```
-## Indent your code
+### Indent your code
 In a docker shell, from anywhere, do
 ```
-# indent.sh
+# indent
 ```
 This will indent both c++ code and Bash code in this repo.
 
-## Tidy your code
+### Tidy your code
 In a docker shell, from anywhere, do
 ```
-# tidy.sh
+# tidy
 ```
 If you only want to tidy one file, give the filename as an argument
 
 This will check the c++ code and complain about places where we break our tidy-rules.
 It will also apply fixes automatically where it can.
 
-## Build and run all tests
+### Build and run all tests
 In the Docker shell, do
-```
-# cd /line-collision-detector/linc/
-# b test
-```
-There's an abbreviation for that, so you can just do
 ```
 # t
 ```
 
-## Compile faster
-Some of our header-only dependencies can be built into static library files instead.
-This is useful during development since it gives faster compile times.
-To enable this, do
-```
-# faster.sh
-```
+### Build Docker Image Locally
+The `docker-shell.sh` script uses an "official" Docker image that it fetches from [here](https://gitlab.com/hangprinter/line-collision-detector/container_registry).
+You might want to build the Docker Image yourself, for example if
 
+ - The official image is outdated.
+ - You have local changes in the Dockerfile.
+ - You don't trust the official image.
 
-## Update gcc
-If a new version of gcc/g++ comes out, and you want to use it, do
+You build your own with:
+
 ```
-$ docker pull gcc
 $ ./build-docker.sh
-... <wait a long time>
+```
+
+### Troubleshooting
+#### Docker not installed
+Starting from a Debian/Ubuntu OS:
+```
+$ sudo apt install docker docker.io
+$ sudo usermod -a -G docker $USER
+$ sudo reboot
+```
+
+Starting from other OSes, check [Docker's official documentation](https://docs.docker.com/get-docker/).
+
+#### Buildfile doesn't exist
+The linc submodule hasn't been updated.
+On the host system, do this:
+```
+$ git submodule update --init --recursive
+```
+... and try to compile again.
+
