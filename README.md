@@ -30,6 +30,8 @@ Code is written and tested a few times.
 There are no known bugs, but there might be bugs.
 
 ## Quick Get Started
+First install Docker. See [Docker's own instructions](https://docs.docker.com/get-docker/).
+
 Fetch And Run The Development Image:
 ```
 $ ./docker-shell.sh
@@ -136,15 +138,6 @@ $ ./build-docker.sh
 ```
 
 ### Troubleshooting
-#### Docker not installed
-Starting from a Debian/Ubuntu OS:
-```
-$ sudo apt install docker docker.io
-$ sudo usermod -a -G docker $USER
-$ sudo reboot
-```
-
-Starting from other OSes, check [Docker's official documentation](https://docs.docker.com/get-docker/).
 
 #### Buildfile doesn't exist
 The linc submodule hasn't been updated.
