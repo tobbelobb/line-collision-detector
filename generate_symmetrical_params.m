@@ -1,4 +1,8 @@
 # rotv requires octave linear-algebra package
+# I use the script like this
+#  $ octave params.m 1942.0 > gen_params
+# Then inside the Docker-shell
+#  # run cylinder_400_1000.stl gen_params
 
 desired_len_from_origin = str2double(argv(){1});
 
