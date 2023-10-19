@@ -1,3 +1,4 @@
+//$t=0.5;
 effectorPivots = [[ 220.0, -140.0, 130.0],
                   [-220.0, -140.0, 130.0],
                   [ 230.0, -130.0, 130.0],
@@ -43,7 +44,8 @@ module fourPoles() {
 
 //!benchy();
 module benchy() {
-  color("moccasin")
+  // Grått
+  color("#e6e6e2")
     scale(20)
       import("./linc/linc/test-models/benchy-low-poly.binary.stl", convexity=4);
 }
@@ -65,7 +67,8 @@ module theModelPartial(h) {
   intersection()
   {
     theModel();
-    color("lime", 0.30)
+    // green
+    color("#41790f", 0.30)
     translate([-big/2, -big/2, -big + h + 0.3]) cube(big);
   }
   // For some reason, the difference() method doesn't preview right
@@ -109,7 +112,7 @@ theSimulation();
 module theSimulation() {
   difference(){
     theModelPartial(t);
-    color("red") {
+    color("#DE5643") {
       intersection()
       {
         theModelPartial(t);
@@ -128,7 +131,7 @@ module theSimulation() {
     //  }
     //}
   }
-  color("yellow")
+  color("#FEEF66")
   scale(1.05)
     intersection()
     {
