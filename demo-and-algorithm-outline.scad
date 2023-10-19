@@ -150,3 +150,13 @@ module theSimulation() {
 // $ ffmpeg -i frames/frame%05d.png -vf palettegen frames/palette.png
 // Once you have frames and pallete, create gif:
 // $ ffmpeg -v warning -framerate 200 -i frames/frame%05d.png -i frames/palette.png -lavfi "paletteuse,setpts=6*PTS" -y out.gif
+
+// To swap out some colors in all the images:
+// mkdir fixed_colors
+// for ((i=0; i<=599; i++)); do
+//   num=$(printf "%05d" $i);
+//   convert "frame${num}.png" -transparent "#aaaaff" -fuzz 5% -fill "#41790f" -opaque "#8897b7" "fixed_colors/frame${num}.png";
+// done
+
+// To resize all the images:
+// for ((i=0; i<=599; i++)); do     num=$(printf "%05d" $i);     convert "frame${num}.png" -resize 500 small/frame${num}.png; done
